@@ -3,6 +3,8 @@ import { renderProfile } from './profile.js';
 
 export function renderLogin(container) {
     container.innerHTML = '';
+    document.body.className = 'login-page';
+
 
     const section = createElementWithClass('section', 'sectionLogin');
     const wrapperDiv = createElementWithClass('div', 'wrapper');

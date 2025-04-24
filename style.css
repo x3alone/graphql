@@ -1,4 +1,4 @@
-body {
+body.login-page {
     font-family: 'Poppins', Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -8,26 +8,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
-.login-container {
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
-    text-align: center;
-}
- /* .profile-container {
-    background: rgb(155, 151, 151);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
-    text-align: center;
-} */
-
 input, button {
     display: block;
     width: 100%;
@@ -54,6 +34,69 @@ button:hover {
     margin-top: 10px;
 }
 
+body.profile-page {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --green: green;
+    --palegreen: rgba(0, 100, 0, 0.637);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+.profile-container {
+    padding: 2rem;
+}
+
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(60px) scale(0.8); /* More movement and scaling */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Longer and more dynamic transition */
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* Return to normal scale */
+}
+
+.stat-box {
+    background: white;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease; /* Smooth transition for stat box */
+}
+.stat-box:hover {
+    transform: translateY(-10px); /* Hover effect to add some movement */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+
+.login-container {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+ /* .profile-container {
+    background: rgb(155, 151, 151);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+} */
+
+
 .profile-container {
     position: relative;
     padding: 20px;
@@ -74,35 +117,47 @@ button:hover {
     min-width: 70px;
     text-align: center;
     z-index: 1000;
+    transition: transform 0.3s ease-out; /* Add animation when hovered */
 }
+
 
 .logout-btn:hover {
     background: green;
+    transform: scale(1.1); /* Slightly increase the size on hover */
+
+}
+.graph-hidden {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9); /* Start with scaling down */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth animation */
 }
 
+.graph-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* Return to full size */
+}
 .stats-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    justify-content: center;
-    gap: 30px;
-    margin: 30px auto;
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    gap: 80px; /* More space between sections */
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .stat-box {
-    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 200px;
-    padding: 20px;
-    background-color: transparent;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+    min-height: 300px;
+    padding: 40px 20px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
 }
+
 
 .stat-box h2 {
     margin-bottom: 10px;
@@ -131,4 +186,5 @@ button:hover {
       transform: scale(0.5);
     }
   }
+  
   
