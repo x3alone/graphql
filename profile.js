@@ -177,8 +177,8 @@ function renderAuditRatioGraph(up, down) {
                   stroke="var(--palegreen)" stroke-width="6" />
         </svg>
         <div style="margin-top: 6px; font-size: 12px; color: #888;">
-            <strong style="color: var(--green);">+${up/1000}KB</strong> / 
-            <strong style="color: var(--palegreen);">-${down/1000}KB</strong>
+            <strong style="color: var(--green);">+${Math.ceil(up/1000)}KB</strong> / 
+            <strong style="color: var(--palegreen);">-${Math.ceil(down/1000)}KB</strong>
         </div>
     `;
 
@@ -268,7 +268,7 @@ function renderXPGraph(transactions) {
             tooltip.style.zIndex = '1000';
             tooltip.innerHTML = `
                 <strong>${point.project}</strong><br/>
-                +${point.gained} XP<br/>
+                +${Math.ceil(point.gained/1000)} KB XP<br/>
                 ${point.date.toLocaleDateString()}
             `;
             document.body.appendChild(tooltip);
