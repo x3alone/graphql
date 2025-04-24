@@ -29,7 +29,9 @@ button:hover {
     background: green;
 }
 
-#error-message {
+.errorMsg {
+    position: absolute;
+    top: 30%;
     color: red;
     margin-top: 10px;
 }

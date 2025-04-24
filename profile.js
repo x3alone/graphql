@@ -40,7 +40,7 @@ export function renderProfile(container) {
                 <small id="xp-start-info"></small>
             </div>
             <div class="stat-box scroll-animate" id="box2">
-                <h2>Graph</h2>
+                <h2> XP Graph</h2>
                 <div id="xp-graph"></div>
             </div>
             <div class="stat-box scroll-animate" id="box5">
