@@ -222,7 +222,7 @@ function renderXPGraph(transactions) {
     axisX.setAttribute('y1', height - margin);
     axisX.setAttribute('x2', width);
     axisX.setAttribute('y2', height - margin);
-    axisX.setAttribute('stroke', '#ccc');
+    axisX.setAttribute('stroke', '#006400');
     svg.appendChild(axisX);
 
     const axisY = document.createElementNS('http://www.w3.org/2000/svg', 'line');
@@ -230,7 +230,7 @@ function renderXPGraph(transactions) {
     axisY.setAttribute('y1', 0);
     axisY.setAttribute('x2', margin);
     axisY.setAttribute('y2', height - margin);
-    axisY.setAttribute('stroke', '#ccc');
+    axisY.setAttribute('stroke', '#006400');
     svg.appendChild(axisY);
 
     // Draw the path line

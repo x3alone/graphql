@@ -1,10 +1,63 @@
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Login and profile page backgrounds */
+body.dark-mode .login-container,
+body.dark-mode .profile-container,
+body.dark-mode .stat-box {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+}
+
+/* Input and button styling in dark mode */
+body.dark-mode input,
+body.dark-mode button {
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+    border: 1px solid #444;
+}
+
+body.dark-mode .logout-btn {
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+}
+
+body.dark-mode .logout-btn:hover {
+    background-color: #444;
+}
+
+/* Optional: darker dots for mouse trail */
+body.dark-mode .trail-dot {
+    background-color: rgb(255, 255, 255);
+}
+/* Default (light mode) button */
+#darkModeToggle {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 4%;
+    background-color: #121212;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode #darkModeToggle {
+    background-color: #ffffff;
+    color: #121212;
+}
+
+
 body.login-page {
     font-family: 'Poppins', Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #f4f4f4;
     margin: 0;
     padding: 0;
 }
