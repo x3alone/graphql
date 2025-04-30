@@ -26,7 +26,7 @@ export function renderProfile(container) {
         });
     }
 
-    // Create profile content
+    // CReate profile content
     const profileContent = document.createElement('div');
     profileContent.className = 'profile-container';
     profileContent.innerHTML = `
@@ -54,7 +54,7 @@ export function renderProfile(container) {
         </div>
     `;
 
-    // Append profile content to the container
+    // add profile content to the container
     container.appendChild(profileContent);
 
     // Initialize IntersectionObserver for scroll animations
@@ -70,14 +70,13 @@ export function renderProfile(container) {
 
     document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
 
-    // Fetch user data after rendering profile content
     fetchUserData();
 }
 
 async function fetchUserData() {
     const token = localStorage.getItem('jwt');
     if (!token) {
-        window.location.reload(); // Redirect to login if no token is found
+        window.location.reload();
         return;
     }
 
@@ -114,11 +113,12 @@ async function fetchUserData() {
             headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
             body: JSON.stringify(query)
         });
-
+        
         const data = await response.json();
         if (!data || !data.data) throw new Error('Failed to fetch user data');
 
-        const user = data.data.user[0]; // Assuming there's only one user
+        
+        const user = data.data.user[0]; 
         if (user) {
             document.getElementById('username').textContent = user.firstName;
             document.getElementById('fullname').textContent = `${user.firstName} ${user.lastName}`;
@@ -128,18 +128,16 @@ async function fetchUserData() {
         }
         
 
-        // Render XP, Graph, and Skills
         renderXp(data);
-        renderXPGraph(data.data.transaction); // Pass XP transactions to graph
-        renderSkillsChart(user.transactions); // Pass skill transactions to bar chart
+        renderXPGraph(data.data.transaction); 
+        renderSkillsChart(user.transactions); 
 
     } catch (error) {
         console.error(error);
-        alert('Error fetching data');
+        alert('Error fetching data: Invalid Token');
     }
 }
 
-// Your renderXP, renderXPGraph, and renderSkillsChart functions remain unchanged
 
 
 function renderXp(data) {
@@ -241,7 +239,7 @@ function renderXPGraph(transactions) {
     path.setAttribute('stroke-width', '2');
     svg.appendChild(path);
 
-    // Add data point circles and tooltips
+    // Add data point circles
     dataPoints.forEach(point => {
         const cx = scaleX(point.date);
         const cy = scaleY(point.xp);
@@ -253,7 +251,7 @@ function renderXPGraph(transactions) {
         circle.setAttribute('fill', '#0a0');
         circle.style.cursor = 'pointer';
 
-        // Tooltip on hover
+        // THEE HOVER TOOLTIP
         circle.addEventListener('mouseover', (e) => {
             const tooltip = document.createElement('div');
             tooltip.className = 'tooltip';

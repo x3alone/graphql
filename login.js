@@ -45,7 +45,7 @@ function addEventButton(button, section, container) {
         if (response.ok) {
             const data = await response.json();
             localStorage.setItem('jwt', data); // Store the JWT
-            renderProfile(container); // Render the profile page
+            renderProfile(container);
             cleanUp(section); // Clean up the login section
         } else {
             const errorData = await response.json();
